@@ -1,0 +1,63 @@
+<?php
+require_once("./model/fonction.php");
+session_start();
+$mesmes=$class_ms=$message="";
+if(isset($_SESSION['user'])){
+    if(empty($_POST)){
+    }
+    else{
+        $message=htmlspecialchars($_POST["message"]);
+        if (!ctype_print($message)) {
+            $mesmes="La chaîne contient des caractères non imprimables.";
+            $class_ms="erro";
+        }
+        else{
+            ajoutmsg($message,date("Y-m-d H:i:s"),$_SESSION['user']);
+            header("location:tchattrait.php");
+        } 
+    }
+    $lis=comptmesage();
+    $lis=$lis/20;
+    $lis=ceil($lis);
+    $min=1;
+    if(!isset($_GET["a"])){
+        $a=1;
+    }
+    else{
+        $a=$_GET["a"];
+    }
+    if(comptmesage()<(20*($a))){
+        $max=comptmesage()-(20*($a-1));
+    }
+    else{
+        $max=20*$a;
+    }
+    $n=comptmesage();
+    $b=listemesage();
+    $scrol="";
+    for($i=0;$i<$n;$i++){
+        $b[$i]['red']=rand(0,255);
+        $b[$i]['bleu']=rand(0,255);
+        $b[$i]['green']=rand(0,255);
+        $b[$i]['issu']="";
+        if($b[$i]["avatar"]==""){
+           $b[$i]['avatar']="defaultprofile.png";
+        }
+        if($b[$i]["pseudo"]==$_SESSION['user']){
+            $b[$i]['issu']="gauche";
+        }
+    }
+    if(isset($_GET["sup"])){
+        $scrol="scrool";
+        include("view/confirsup.php");
+    }
+    if(isset($_GET["supr"])){
+        supmsg($_GET["supr"]);
+        header("location:tchattrait.php");
+    }
+    include("view/tchat.php");
+}
+else{
+    header("location:connexiontrait.php");
+}
+?>

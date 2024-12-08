@@ -1,0 +1,21 @@
+<?php
+    include("./model/fonction.php");
+    session_start();
+    if(!isset($_SESSION['user'])){
+        header("location:./controler/connexiontrait.php");
+    }
+    else{
+        $user=getuser($_SESSION['user']);
+        if(isset($_GET['sup'])){
+            supmgt($user['pseudo']);
+            sumpuser($user['pseudo']);
+            session_destroy();
+            header("location:connexiontrait.php");
+        }
+        if(isset($_GET['dec'])){
+            session_destroy();
+            header("location:connexiontrait.php");
+        }
+        include("view/profil.php");
+    }
+?>

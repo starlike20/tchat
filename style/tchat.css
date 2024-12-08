@@ -1,0 +1,178 @@
+body{
+    all: unset;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #EFEFEF;
+    position: absolute;
+}
+
+.tchat{
+    position: absolute;
+    right: 0px;
+    width: 100%;
+    padding-bottom: 90px;
+    padding-top: 110px;
+}
+textarea{
+    border: 2px solid#b6ddf6b2;
+    width: 800px;
+    height: 40px;
+    border-radius: 10px;
+    background-color:#EFEFEF;
+}
+footer form{
+    position: relative;
+    margin: 4px;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 5px;
+}
+footer{
+    position: fixed;
+    width:100%;
+    background-color:white;
+    bottom: 0px;
+    box-shadow: 0px -5px 5px rgb(96, 164, 233);
+}
+footer button{
+    background-color: white;
+    border-radius: 30px;
+}
+footer img{
+    width: 40px;
+}
+.msg{
+    display: flex;
+    margin: 7px;
+}
+.tchat img{
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+}
+.msg1{
+    padding:2px;
+    padding-left: 10px;
+    margin-left: 15px;
+    width: 600px;
+    background-color:white;
+    border-radius:7px;
+    box-shadow: 1px 2px 4px rgb(96, 164, 233)
+}
+.gauche{
+    right: 0px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.gauche .msg1{
+    background-color:#008aa0;
+    margin-right: 15px;
+}
+.M{
+    color:darkred;
+}
+.F{
+    color:darkblue;
+}
+.S{
+    color:darkolivegreen;
+}
+header{
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    height: 80px;
+    z-index: 2;
+    box-shadow: 1px 2px 4px rgb(96, 164, 233);
+}
+nav{
+    position: absolute;
+    right: 20px;
+    top:15px;
+    display: flex;
+    width: 200px;
+    background-color:  #99a8eafd;
+    border-radius: 5px;
+}
+nav a{
+    text-decoration: none;
+    display: block;
+    height: 40px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+#canal{
+    background-color: #08f;
+    border-radius:5px 1px 1px 5px;
+    box-shadow: 5px 0px 2px rgb(96, 164, 233);
+}
+.tete{
+    display: flex;
+    justify-content: space-between;
+}
+.tete img{
+    width: 12px;
+    height: 12px;
+}
+#bag{
+    position:relative ;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.556);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#conf{
+    position: relative;
+    height: 300px;
+    width: 350px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#bag img{
+    width: 30%;
+}
+.cont{
+    display: block;
+    width: 100px;
+    height: 25px;
+    background-color: #25AE88;
+    border-radius: 7px;
+    color: white;
+    margin: 10px;
+}
+.scrool{
+    overflow: hidden;
+}
+button{
+    all: unset;
+    margin: 7px;
+}
+#confe{
+    display: flex;
+    justify-content: space-around;
+}
+#confe a{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.erro{
+    border: 2px solid red;
+}
+.error{
+    color:red;
+    margin-right: 200px;
+}
